@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="yilinzhi@10.134.101.135:2222">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data/yilinzhi/Segmentation/VMS" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="yilinzhi@10.134.101.135:8888">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/yilinzhi/Projects/Segmentation/VMS" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
