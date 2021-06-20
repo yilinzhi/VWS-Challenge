@@ -11,9 +11,9 @@ import argparse
 
 def parse_args():
     """
-        1.Raw data
-        2.Preprocessed image
-        3.Preprocessed mask
+        1.The path of Raw data.
+        2.The path of Preprocessed image.
+        3.The path of Preprocessed mask.
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('--datasets_path',

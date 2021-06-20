@@ -14,8 +14,6 @@ import os
 import pydicom
 import glob
 import shutil
-import sys
-import random
 import numpy as np
 from data_parameter import parse_args
 import xml.etree.ElementTree as ET
@@ -125,7 +123,7 @@ def get_contour(qvsroot, dicomslicei, conttype, dcmsz=720):
 
 
 def save_internal(data_input_dir, image_save_path):
-    """存储确定image：正负样本用于训练。"""
+    """Store internal samples."""
 
     create_dir(image_save_path + '/train/ICAL')
     create_dir(image_save_path + '/train/ICAR')
@@ -262,7 +260,7 @@ def save_internal(data_input_dir, image_save_path):
 
 
 def save_external_left(data_input_dir, image_save_path):
-    """存储确定image：正负样本用于训练。"""
+    """Store external left samples"""
 
     create_dir(image_save_path + '/train/ECAL')
     create_dir(image_save_path + '/test/ECAL')
@@ -396,7 +394,7 @@ def save_external_left(data_input_dir, image_save_path):
                             img_save)
 
 def save_external_right(data_input_dir, image_save_path):
-    """存储确定image：正负样本用于训练。"""
+    """Store external right samples"""
 
     create_dir(image_save_path + '/train/ECAR')
     create_dir(image_save_path + '/test/ECAR')

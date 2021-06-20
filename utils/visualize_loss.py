@@ -18,7 +18,8 @@ def plot_loss(args):
         # if flod > 0:
         #     break
 
-        loss_path = args.check_ICAR_semi + "/Udensenet/0.0001/" + str(flod) + '/data.csv'
+        # todo：修改位置！
+        loss_path = args.check_ECAR_semi + "/Udensenet_TF_1/0.0001/" + str(flod) + '/data.csv'
         loss_data = pd.read_csv(loss_path)
 
         loss_data_numpy = np.zeros((len(loss_data), 4), dtype=np.float32)

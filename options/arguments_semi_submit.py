@@ -44,10 +44,10 @@ def parse_args():
                         default='/data/yilinzhi/Segmentation/VMS/checkpoints/semi_train_F/train/ICAR',
                         help="Training saving.")
     parser.add_argument('--test_ICAR_semi',
-                        default='/data/yilinzhi/Segmentation/VMS/datasets/train_data/image_semi_F/test_ICAR',
+                        default='/data/yilinzhi/Segmentation/VMS/datasets/train_data/image_semi_F/test/ICAR',
                         help="Test images.")
     parser.add_argument('--true_ICAR_semi',
-                        default='/data/yilinzhi/Segmentation/VMS/datasets/train_label/mask_semi_F/test_ICAR',
+                        default='/data/yilinzhi/Segmentation/VMS/datasets/train_label/mask_semi_F/test/ICAR',
                         help="Test masks.")
 
     parser.add_argument('--image_ECAL_semi',

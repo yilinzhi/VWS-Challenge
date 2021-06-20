@@ -232,14 +232,12 @@ def show_image_mask_pred(image_path,true_mask_path,pred_mask_path):
     #     file_name=dir.split('/')[-1]
     #     neg_list_1.append(file_name)
 
-
-
     files_choice=os.listdir(pred_mask_path)
     files_choice.sort()
 
     # files_choice = random.sample(pos_list_1, 20)
 
-    for file_name in files_choice[230:250]:
+    for file_name in files_choice[340:380]:
         image_numpy=np.load(image_path+'/'+file_name)
         true_mask=np.load(true_mask_path+'/'+file_name)
         mask_numpy =np.load(pred_mask_path+'/'+file_name)
@@ -263,6 +261,23 @@ def show_image_mask_pred(image_path,true_mask_path,pred_mask_path):
         plt.colorbar(img3)
         plt.show()
 
+
+def read_npy(image_path):
+    image_file=os.listdir(image_path)
+    image_file.sort(key=lambda name: int(name.split('_')[0]))
+    print(image_file)
+
+    for file_name in image_file[300:320]:
+        image_numpy=np.load(image_path+'/'+file_name)
+
+        fig =plt.figure(figsize=(10,5))
+        ax1 =fig.add_subplot(111)
+        img1=ax1.imshow(image_numpy,cmap='gray')
+        ax1.set_title(str(file_name))
+        plt.colorbar(img1)
+        plt.show()
+
+
 def main(args):
     # TODO：修改args!
 
@@ -272,15 +287,18 @@ def main(args):
     # show_image_mask_origin(image_path,mask_path)
 
     # 查看预测图片
-    image_path=args.test_ICAL_semi
-    true_mask_path=args.true_ICAL_semi
-    pred_mask_path='/data/yilinzhi/Segmentation/VMS/checkpoints/semi_train_F/pred/P576_post_npy_ICAL'
-
-    show_image_mask_pred(image_path,true_mask_path,pred_mask_path)  # 随机展示一些病例图像。
+    # image_path=args.test_ICAR_semi
+    # true_mask_path=args.true_ICAR_semi
+    # pred_mask_path='/data/yilinzhi/Segmentation/VMS/checkpoints/semi_train_F/pred/post_process/P206_npy_ICAR'
+    #
+    # show_image_mask_pred(image_path,true_mask_path,pred_mask_path)  # 随机展示一些病例图像。
 
     # 查看最原始图片
     # origin_path=args.datasets_path
     # show_image(origin_path)
+
+    image_path='/data/yilinzhi/Segmentation/VMS/checkpoints/semi_train_F/pred/npy/0_P176_U/P176_CASCADE-ICAR/'
+    read_npy(image_path)
 
 
 if __name__ == '__main__':

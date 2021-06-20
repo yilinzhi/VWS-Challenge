@@ -11,7 +11,6 @@ import cv2
 import shutil
 import pydicom
 import glob
-import random
 import numpy as np
 import xml.etree.ElementTree as ET
 from data_parameter import parse_args
